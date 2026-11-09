@@ -25,5 +25,5 @@ ONPREM_PUBLIC_IP=<your public IP> ./scripts/deploy.sh
 
 ## Things to check first
 
-- Region: `uksouth` by default. New subscriptions can have region restrictions, see [troubleshooting](../08-Troubleshooting/README.md)
+- Region: `uksouth` by default. New subscriptions can have region restrictions, see [troubleshooting](../05-Troubleshooting-and-Cleanup/README.md)
 - VM size: `Standard_D2als_v6` by default. If you have B-series quota, `Standard_B2ats_v2` is much cheaper
