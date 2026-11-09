@@ -1,0 +1,12 @@
+# Remove the Azure tunnel config from the MikroTik after the lab is destroyed.
+/ip ipsec policy remove [find comment="LAN <-> Azure VNet"]
+/ip ipsec identity remove [find peer=azure]
+/ip ipsec peer remove [find name=azure]
+/ip ipsec proposal remove [find name=azure-esp]
+/ip ipsec profile remove [find name=azure-ike]
+/ip firewall nat remove [find comment="No NAT to Azure (IPsec)"]
+/ip firewall filter remove [find comment="Accept decrypted IPsec traffic"]
+/ip firewall filter remove [find comment="Accept traffic to be encrypted"]
+/ip firewall filter remove [find comment="IKE/NAT-T from Azure"]
+/ip firewall filter remove [find comment="ESP from Azure"]
+/ip firewall mangle remove [find comment~"Clamp MSS"]
