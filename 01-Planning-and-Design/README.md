@@ -12,6 +12,8 @@ A site-to-site VPN puts an Azure VPN Gateway at one end and the office router at
 
 I did look at the other options. ExpressRoute would work, but it needs a provider, takes weeks and costs far more than a 20-person office needs. A point-to-site VPN is great for remote workers, but every laptop needs a client and it doesn't connect the office as a whole. Bastion is handy for admin access but doesn't give the app network access, and putting a public IP on the server breaks the main requirement. The one downside of a site-to-site VPN is that it's only as good as the office broadband, and there's no SLA on the internet part.
 
+![Architecture diagram](../diagrams/architecture.svg)
+
 ## Design choices
 
 I went with a route-based gateway because it's needed for IKEv2 and leaves room for BGP or point-to-site later. For the size I picked VpnGw1AZ. The old non-AZ SKUs were retired in September 2026, and Gw1AZ is the smallest one that supports a custom IPsec policy, BGP and active-active. Basic doesn't support any of those, so the customer would end up rebuilding later.
