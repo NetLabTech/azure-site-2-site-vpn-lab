@@ -18,7 +18,7 @@ The gateway is Azure's end of the tunnel. It's also the slowest thing to deploy 
 
 ![VPN gateway review and create](images/vpn-gateway-review-and-create.png)
 
-I clicked Create at 11:27 and it finished at about 12:10. While it was building I got on with the local network gateway in another tab. Once it was up, I noted down its public IP, because the Sky Hub and MikroTik both need it later. The tunnel graphs are flat here because nothing was connected yet.
+The gateway took about 40 minutes to deploy, so while it was building I got on with the local network gateway in another tab. Once it was up, I noted down its public IP, because the Sky Hub and MikroTik both need it later. The tunnel graphs are flat here because nothing was connected yet.
 
 ![VPN gateway overview after deployment](images/vpn-gateway-overview-after-deploy.png)
 
